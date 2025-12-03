@@ -31,6 +31,15 @@ The goal of this project is to quantify the mitochondrial area and mtDNA density
    python -m pip install -r .\requirements.txt
    ```
 
+## Install sam2
+
+```bash
+mkdir inc
+cd inc
+git clone https://github.com/facebookresearch/sam2.git
+cd sam2
+pip install -e .
+
 ### Running the code
 
 1. Start the virtual environment if not already loaded
