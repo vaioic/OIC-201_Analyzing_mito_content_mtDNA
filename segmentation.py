@@ -15,6 +15,9 @@ def segment_tail(image):
 
     segment_tail(image) will segment the tail region and return a binary mask. image should be a single z-plane image containing both the mitochondria and mtDNA labels.
     """
+
+    
+    
     
     # Combine both images
     combined_image = skimage.exposure.equalize_adapthist(image[:, :, 0].squeeze()) + skimage.exposure.equalize_adapthist(image[:, :, 1].squeeze())
@@ -34,7 +37,7 @@ def segment_tail(image):
 
     #plt.imshow(mask_tail)
     
-    mask_tail_chull = skimage.morphology.convex_hull_image(mask_tail)
+    # mask_tail_chull = skimage.morphology.convex_hull_image(mask_tail)
 
     return mask_tail_chull
 
