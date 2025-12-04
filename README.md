@@ -31,14 +31,21 @@ The goal of this project is to quantify the mitochondrial area and mtDNA density
    python -m pip install -r .\requirements.txt
    ```
 
-## Install sam2
+5. Install SAM2
+   ```bash
+   git clone https://github.com/facebookresearch/sam2.git ./inc/sam2
+   pip install -e ./inc/sam2
+   ```
 
-```bash
-mkdir inc
-cd inc
-git clone https://github.com/facebookresearch/sam2.git
-cd sam2
-pip install -e .
+6. Download the model checkpoints. Download the [sam2.1_hiera_large.pt](https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt) model into the folder ``/inc/sam2/checkpoints``
+  ```bash
+  wget -O sam2.1_hiera_large.pt -P .\inc\sam2\checkpoints https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt
+  ```
+
+  Note: For Windows PowerShell: 
+  ```bash
+  wget https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt -OutFile .\inc\sam2\checkpoints\sam2.1_hiera_large.pt
+  ```
 
 ### Running the code
 
@@ -72,6 +79,7 @@ This project relies on the following packages:
 - scikit-image v0.25.2
 - numpy v2.3.4
 - scipy v1.16.3
+- sam2 v 12/11/2024
 
 **Note:** For full dependency list, see [requirements.txt](requirements.txt).
 
